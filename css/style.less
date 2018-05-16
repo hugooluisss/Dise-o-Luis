@@ -1,0 +1,231 @@
+@import "variables.less";
+
+html, body{
+	width: 100%;
+	height: 100%;
+	margin-top: 0px;
+	padding-top: 0px;
+	overflow-y: hidden;
+}
+
+header{
+	height: @header-height;
+	
+	.brand{
+		padding-left: 10px;
+		padding-right: 10px;
+		background: @grisOscuro;
+		img{
+			height: @header-height;
+			width: auto;
+			@media (max-width: @mq-xs-max){
+				width: 100%;
+			}
+		}
+	}
+	
+	.navegador{
+		background: linear-gradient(90deg, @grisOscuro, @grisClaro 3%);
+		height: @header-height;
+		
+		.id{
+			padding-top: @header-height/2-15;
+			@media (min-width: @mq-sm-min){
+				text-align: center;
+			}
+		}
+		
+		& > div{
+			padding: 0px 0px 0px 0px;
+		}
+		
+		.col-xs-8{
+			overflow-x: scroll;
+			@media (min-width: @mq-sm-min){
+				padding-top: @header-height/2-15;
+			}
+		}
+		
+		ul.pagination{
+			border: 0px;
+			border-radius: 0px;
+			margin-top: 0px;
+			
+			li{
+				
+				a{
+					border-radius: 0px;
+					border: none;
+					padding: 3px 6px;
+					background: none;
+					&:before{
+						content: "●";
+						color: white;
+					}
+				}
+				
+				
+				&.active{
+					a{
+						background: none;
+						&:before{
+							content: "●";
+							color: black;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.cuadros{
+		padding-left: 0px;
+		padding-right: 0px;
+		div{
+			height: @header-height;
+			
+			@media (max-width: @mq-xs-max){
+				height: (@header-height/2);
+				width: 50%;
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+			
+			&:nth-child(odd){
+				background: @grisOscuro;
+			}
+			
+			&:nth-child(even){
+				background: @grisIntermedio;
+			}
+		}
+	}
+}
+
+.cuerpo{
+	height: 90%;
+	background-image: url('../images/bg.png');
+	padding-left: 30px;
+	position: fixed;
+	bottom:  d;
+	z-index: -1;
+	
+	.page-header{
+		margin-top: 0px;
+		margin-bottom: 0px;
+		border: none;
+		background: @title-background;
+		height: 15%;
+		h1{
+			margin-top: 0px;
+			padding-top: 30px;
+		}
+	}
+	
+	.columnas{
+		background: black;
+		height: 85%;
+		padding-left: 1.5%;
+		overflow-x: scroll;
+		
+		.columna{
+			width: 14.28%;
+			height: 100%;
+			position: relative;
+			float: left;
+			
+			@media (max-width: @mq-xs-max){
+				height: 50%;
+				width: 33.33%;
+			}
+			
+			.sombra-right{
+				background: linear-gradient(270deg, @grisOscuro 1%, rgba(0, 0, 0, 0));
+				position: absolute;
+				min-width: 10%;
+				height: 100%;
+				top: 0px;
+				right: 0px;
+				z-index: 1;
+			}
+			
+			.portada{
+				width: 100%;
+				height: 70%;
+				overflow-x: hidden;
+				position: relative;
+				
+				img{
+					height: 100%;
+					
+					@media (max-width: @mq-xs-max){
+						width: 100%;
+					}
+					
+					&.right{
+						float: right;
+					}
+					
+				}
+			}
+			
+			.pie{
+				width: 100%;
+				height: 30%;
+				display: table;
+				
+				font-size: 18px;
+				font-weight: bold;
+				text-align: center;
+				
+				.nombre{
+					display: table-cell;
+					vertical-align: middle;
+				}
+				
+				
+				&.azul1{
+					background: @c-azul1;
+				}
+				
+				&.azul2{
+					background: @c-azul2;
+				}
+				
+				&.amarillo{
+					background: @c-amarillo;
+				}
+				
+				&.verde{
+					background: @c-verde;
+				}
+				
+				&.lila{
+					background: @c-lila;
+				}
+				
+				&.naranja{
+					background: @c-naranja;
+				}
+				
+				&.olivo{
+					background: @c-olivo;
+				}
+			}
+		}
+	}
+}
+
+footer{
+	background: @grisClaro;
+	height: @pie-width;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	.menu{
+		width: @pie-width;
+		height: @pie-width;
+		background: @grisOscuro;
+		color: white;
+	}
+}
