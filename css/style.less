@@ -10,6 +10,8 @@ html, body{
 
 header{
 	height: @header-height;
+	position: relative;
+	z-index: 2;
 	
 	.brand{
 		padding-left: 10px;
@@ -78,25 +80,42 @@ header{
 		}
 	}
 	
-	.cuadros{
+	.botones{
 		padding-left: 0px;
 		padding-right: 0px;
 		div{
 			height: @header-height;
+			text-align: center;
+			padding-top: 15px;
+			cursor: pointer;
 			
 			@media (max-width: @mq-xs-max){
 				height: (@header-height/2);
 				width: 50%;
 				padding-left: 0px;
 				padding-right: 0px;
+				padding-top: 5px;
 			}
 			
 			&:nth-child(odd){
 				background: @grisOscuro;
+				
+				&:hover{
+					background: black;
+				}
 			}
 			
 			&:nth-child(even){
 				background: @grisIntermedio;
+				
+				&:hover{
+					background: black;
+				}
+			}
+			
+			
+			a{
+				color: white;
 			}
 		}
 	}
@@ -244,6 +263,10 @@ footer{
 		color: white;
 		float: left;
 		
+		&[show=menu]{
+			cursor: pointer;
+		}
+		
 		img{
 			width: @pie-width;
 			height: @pie-width;
@@ -296,6 +319,7 @@ footer{
 	display: none;
 	transition: all 0.5s linear;
 	transform: translateY(100%);
+	z-index: 1;
 	
 	&.show{
 		visibility: visible;
@@ -320,6 +344,8 @@ footer{
 			padding: 30px 20px 10px 20px;
 			height: 90px;
 			font-size: 24px;
+			cursor: pointer;
+			
 			&:nth-child(even){
 				background-image: url("../images/bgOpcMenu.png");
 				background-position: top center;
