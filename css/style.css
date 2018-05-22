@@ -139,6 +139,11 @@ header .botones div a {
   padding-left: 1.5%;
   overflow-x: scroll;
 }
+@media (max-height: 700px) {
+  .cuerpo .columnas {
+    height: 70%;
+  }
+}
 .cuerpo .columnas .columna {
   width: 14.28%;
   height: 100%;
